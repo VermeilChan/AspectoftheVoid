@@ -77,7 +77,7 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
 
     private Location findTeleportDestination(Player player, Vector direction) {
         Location teleportDestination = player.getLocation();
-        for (double i = 0; i < 10; i += 0.5) {
+        for (double i = 0; i < 12; i += 0.5) {
             Location loc = player.getLocation().add(direction.clone().multiply(i));
             if (!loc.getBlock().isPassable()) {
                 break;
