@@ -1,5 +1,5 @@
 name: AspectoftheVoid
 version: '${project.version}'
 main: me.vermeil.aspectofthevoid.AspectoftheVoid
-description: A simple plugin that allows players to teleport to a targeted block up to 50 blocks away.
-author: VermeilChab
+api-version: '1.17'
+load: STARTUP
