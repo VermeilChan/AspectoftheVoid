@@ -11,12 +11,27 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.EquipmentSlot;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class AspectoftheVoid extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
+        Objects.requireNonNull(getCommand("giveaspectofthevoid")).setExecutor((sender, command, label, args) -> {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                if (player.isOp()) {
+                    giveAspectOfTheVoid(player);
+                }
+            }
+            return true;
+        });
     }
 
     @Override
@@ -39,8 +54,27 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
     }
 
     private boolean isRightClick(PlayerInteractEvent event) {
-        return event.getPlayer().getInventory().getItemInMainHand().getType() == Material.DIAMOND_SHOVEL
-                && (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK);
+        if (event.getHand() != EquipmentSlot.HAND) {
+            return false;
+        }
+
+        if (event.getAction() != Action.RIGHT_CLICK_AIR && event.getAction() != Action.RIGHT_CLICK_BLOCK) {
+            return false;
+        }
+
+        ItemStack itemInHand = event.getPlayer().getInventory().getItemInMainHand();
+
+        if (itemInHand.getType() != Material.DIAMOND_SHOVEL) {
+            return false;
+        }
+
+        ItemMeta meta = itemInHand.getItemMeta();
+        if (meta == null) {
+            return false;
+        }
+
+        String expectedName = ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void";
+        return meta.getDisplayName().equals(expectedName);
     }
 
     private void teleportPlayer(Player player) {
@@ -54,7 +88,7 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
     }
 
     private void teleportToTargetedBlock(Player player) {
-        Block targetBlock = player.getTargetBlockExact(57, FluidCollisionMode.NEVER);
+        Block targetBlock = player.getTargetBlockExact(61, FluidCollisionMode.NEVER);
 
         if (targetBlock != null) {
             Location teleportDestination = targetBlock.getLocation().add(0.5, 1, 0.5);
@@ -85,5 +119,30 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
             teleportDestination = loc;
         }
         return teleportDestination;
+    }
+
+    private void giveAspectOfTheVoid(Player player) {
+        ItemStack item = new ItemStack(Material.DIAMOND_SHOVEL);
+        ItemMeta meta = item.getItemMeta();
+
+        if (meta != null) {
+            meta.setDisplayName(ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void");
+            List<String> lore = Arrays.asList(
+                    ChatColor.GRAY + "Damage: " + ChatColor.RED + "+120",
+                    ChatColor.GRAY + "Strength: " + ChatColor.RED + "+100",
+                    "",
+                    ChatColor.GOLD + "Ability: Instant Transmission" + ChatColor.YELLOW + " RIGHT CLICK",
+                    ChatColor.GRAY + "Teleport 12 Blocks ahead of you and gain" + ChatColor.GREEN + " +50" + ChatColor.WHITE + " ✦Speed" + ChatColor.GRAY + " for" + ChatColor.GREEN + " 3 seconds" + ChatColor.GRAY + ".",
+                    "",
+                    ChatColor.GOLD + "Ability: Ether Transmission" + ChatColor.YELLOW + " SNEAK RIGHT CLICK",
+                    ChatColor.GRAY + "Teleport to your targeted block up to 61 blocks away.",
+                    "",
+                    ChatColor.DARK_PURPLE + "EPIC SWORD"
+            );
+            meta.setLore(lore);
+            item.setItemMeta(meta);
+        }
+
+        player.getInventory().addItem(item);
     }
 }
