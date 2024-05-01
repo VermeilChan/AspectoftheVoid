@@ -3,3 +3,13 @@ version: '${project.version}'
 main: me.vermeil.aspectofthevoid.AspectoftheVoid
 api-version: '1.17'
 load: STARTUP
+authors: [VermeilChan]
+description: Aspect of the Void is a Spigot plugin inspired by the Aspect of the Void from the Hypixel Skyblock.
+website: https://github.com/VermeilChan/AspectoftheVoid
+commands:
+  giveaspectofthevoid:
+    usage: /giveaspectofthevoid
+    permission: aspectofthevoid.give
+permissions:
+  aspectofthevoid.give:
+    default: op
