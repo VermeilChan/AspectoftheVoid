@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -14,6 +15,7 @@ import org.bukkit.util.Vector;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.EquipmentSlot;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -75,6 +77,28 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
 
         String expectedName = ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void";
         return meta.getDisplayName().equals(expectedName);
+    }
+
+    @EventHandler
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
+        if (event.getDamager() instanceof Player) {
+            Player player = (Player) event.getDamager();
+            ItemStack itemInHand = player.getInventory().getItemInMainHand();
+            if (isAspectOfTheVoid(itemInHand)) {
+                event.setDamage(120);
+            }
+        }
+    }
+
+    private boolean isAspectOfTheVoid(ItemStack item) {
+        if (item == null) {
+            return false;
+        }
+        if (item.getType() != Material.DIAMOND_SHOVEL) {
+            return false;
+        }
+        ItemMeta meta = item.getItemMeta();
+        return meta != null && meta.getDisplayName().equals(ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void");
     }
 
     private void teleportPlayer(Player player) {
