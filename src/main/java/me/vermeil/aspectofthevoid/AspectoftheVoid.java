@@ -152,6 +152,9 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
         if (meta != null) {
             meta.setDisplayName(ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void");
             List<String> lore = Arrays.asList(
+                    // Credit to (https://github.com/zSkillCode)
+                    // my eyes hurt
+
                     ChatColor.GRAY + "Damage: " + ChatColor.RED + "+120",
                     ChatColor.GRAY + "Strength: " + ChatColor.RED + "+132" + ChatColor.BLUE + " (+32)",
                     "",
