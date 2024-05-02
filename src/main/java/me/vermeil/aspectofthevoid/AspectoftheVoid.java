@@ -84,7 +84,7 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
         player.teleport(teleportDestination);
 
         player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 1.0f);
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 5));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 60, 5));
     }
 
     private void teleportToTargetedBlock(Player player) {
@@ -103,9 +103,9 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
             player.teleport(correctedLocation);
 
             player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 1.0f);
-            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 5));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 60, 5));
         } else {
-            player.sendMessage(ChatColor.RED + "Too far away, Try targeting a block within 57 blocks.");
+            player.sendMessage(ChatColor.RED + "Too far away, Try targeting a block within 61 blocks.");
         }
     }
 
