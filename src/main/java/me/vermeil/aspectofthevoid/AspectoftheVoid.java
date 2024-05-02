@@ -129,15 +129,15 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
             meta.setDisplayName(ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void");
             List<String> lore = Arrays.asList(
                     ChatColor.GRAY + "Damage: " + ChatColor.RED + "+120",
-                    ChatColor.GRAY + "Strength: " + ChatColor.RED + "+100",
+                    ChatColor.GRAY + "Strength: " + ChatColor.RED + "+132" + ChatColor.BLUE + " (+32)",
                     "",
-                    ChatColor.GOLD + "Ability: Instant Transmission" + ChatColor.YELLOW + " RIGHT CLICK",
-                    ChatColor.GRAY + "Teleport 12 Blocks ahead of you and gain" + ChatColor.GREEN + " +50" + ChatColor.WHITE + " ✦Speed" + ChatColor.GRAY + " for" + ChatColor.GREEN + " 3 seconds" + ChatColor.GRAY + ".",
+                    ChatColor.GOLD + "Ability: Instant Transmission" + ChatColor.YELLOW + " " + ChatColor.BOLD + "RIGHT CLICK",
+                    ChatColor.GRAY + "Teleport 12 Blocks ahead of you and gain" + ChatColor.GREEN + " +50" + ChatColor.WHITE + " ✦ Speed" + ChatColor.GRAY + " for" + ChatColor.GREEN + " 3 seconds" + ChatColor.GRAY + ".",
                     "",
-                    ChatColor.GOLD + "Ability: Ether Transmission" + ChatColor.YELLOW + " SNEAK RIGHT CLICK",
+                    ChatColor.GOLD + "Ability: Ether Transmission" + ChatColor.YELLOW + " " + ChatColor.BOLD + "SNEAK RIGHT CLICK",
                     ChatColor.GRAY + "Teleport to your targeted block up to 61 blocks away.",
                     "",
-                    ChatColor.DARK_PURPLE + "EPIC SWORD"
+                    ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "EPIC SWORD"
             );
             meta.setLore(lore);
             item.setItemMeta(meta);
