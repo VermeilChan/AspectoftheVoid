@@ -25,7 +25,7 @@ Aspect of the Void is a Spigot plugin inspired by the [Aspect of the Void](https
 - Once given, all players can use the Aspect of the Void's abilities without any additional permissions.
 
 ## License
-This plugin is licensed under the [GNU General Public License v3.0](LICENSE).
+- This plugin is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Credits
 - Icon: [Furfsky](https://furfsky.net/)
