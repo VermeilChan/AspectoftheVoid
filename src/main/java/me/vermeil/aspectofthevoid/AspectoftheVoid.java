@@ -75,7 +75,7 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
             return false;
         }
 
-        String expectedName = ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void";
+        String expectedName = ChatColor.GOLD + "Warped Aspect Of The Void";
         return meta.getDisplayName().equals(expectedName);
     }
 
@@ -85,7 +85,7 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
             Player player = (Player) event.getDamager();
             ItemStack itemInHand = player.getInventory().getItemInMainHand();
             if (isAspectOfTheVoid(itemInHand)) {
-                event.setDamage(120);
+                event.setDamage(315);
             }
         }
     }
@@ -98,7 +98,7 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
             return false;
         }
         ItemMeta meta = item.getItemMeta();
-        return meta != null && meta.getDisplayName().equals(ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void");
+        return meta != null && meta.getDisplayName().equals(ChatColor.GOLD + "Warped Aspect Of The Void");
     }
 
     private void teleportPlayer(Player player) {
@@ -150,21 +150,30 @@ public class AspectoftheVoid extends JavaPlugin implements Listener {
         ItemMeta meta = item.getItemMeta();
 
         if (meta != null) {
-            meta.setDisplayName(ChatColor.DARK_PURPLE + "Heroic Aspect Of The Void");
+            meta.setDisplayName(ChatColor.GOLD + "Warped Aspect Of The Void");
             List<String> lore = Arrays.asList(
                     // Credit to (https://github.com/zSkillCode)
-                    // my eyes hurt
 
-                    ChatColor.GRAY + "Damage: " + ChatColor.RED + "+120",
-                    ChatColor.GRAY + "Strength: " + ChatColor.RED + "+132" + ChatColor.BLUE + " (+32)",
+                    ChatColor.GRAY + "Damage: " + ChatColor.RED + "+315 " + ChatColor.YELLOW + "(+30) " + ChatColor.BLUE + "(+165)",
+                    ChatColor.GRAY + "Strength: " + ChatColor.RED + "+300 " + ChatColor.YELLOW + "(+30) " + ChatColor.GOLD + "[+5] " + ChatColor.BLUE + "(+165)",
+                    ChatColor.GRAY + "Crit Damage: " + ChatColor.RED + "+70",
+                    ChatColor.GRAY + "Intelligence: " + ChatColor.GREEN + "+167 " + ChatColor.BLUE + "(+150) " + ChatColor.LIGHT_PURPLE + "(+17)",
+                    ChatColor.DARK_PURPLE + "[" + ChatColor.AQUA + "✎" + ChatColor.DARK_PURPLE + "]",
+                    "",
+                    ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Ultimate Wise V",
                     "",
                     ChatColor.GOLD + "Ability: Instant Transmission" + ChatColor.YELLOW + " " + ChatColor.BOLD + "RIGHT CLICK",
-                    ChatColor.GRAY + "Teleport 12 Blocks ahead of you and gain" + ChatColor.GREEN + " +50" + ChatColor.WHITE + " ✦ Speed" + ChatColor.GRAY + " for" + ChatColor.GREEN + " 3 seconds" + ChatColor.GRAY + ".",
+                    ChatColor.GRAY + "Teleport 12 Blocks ahead of you and",
+                    ChatColor.GRAY + "gain" + ChatColor.GREEN + " +50" + ChatColor.WHITE + " ✦ Speed" + ChatColor.GRAY + " for" + ChatColor.GREEN + " 3 seconds" + ChatColor.GRAY + ".",
+                    ChatColor.DARK_GRAY + "Mana Cost: " + ChatColor.DARK_AQUA + "21",
                     "",
                     ChatColor.GOLD + "Ability: Ether Transmission" + ChatColor.YELLOW + " " + ChatColor.BOLD + "SNEAK RIGHT CLICK",
-                    ChatColor.GRAY + "Teleport to your targeted block up to 61 blocks away.",
+                    ChatColor.GRAY + "Teleport to your targeted block up",
+                    ChatColor.GRAY + "to " + ChatColor.GREEN +"61 blocks " + ChatColor.GRAY + "away.",
+                    ChatColor.DARK_GRAY + "Soulflow: " + ChatColor.DARK_AQUA + "1",
+                    ChatColor.DARK_GRAY + "Mana Cost: " + ChatColor.DARK_AQUA + "81",
                     "",
-                    ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "EPIC SWORD"
+                    ChatColor.GOLD + "" + ChatColor.MAGIC + "A" + ChatColor.RESET + ChatColor.GOLD + ChatColor.BOLD + " LEGENDARY SWORD " + ChatColor.MAGIC + "A"
             );
             meta.setLore(lore);
             item.setItemMeta(meta);
