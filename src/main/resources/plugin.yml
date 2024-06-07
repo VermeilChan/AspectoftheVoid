@@ -9,7 +9,6 @@ website: https://github.com/VermeilChan/AspectoftheVoid
 commands:
   giveaspectofthevoid:
     usage: /giveaspectofthevoid
-    permission: aspectofthevoid.give
 permissions:
-  aspectofthevoid.give:
-    default: op
+  giveaspectofthevoid.give:
+    default: true
