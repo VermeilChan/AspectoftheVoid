@@ -15,14 +15,13 @@ Aspect of the Void is a Spigot plugin inspired by the [Aspect of the Void](https
 
 ### In-Game
 1. **Obtaining the Aspect of the Void:**
-   - Admins or OP players can give themselves the Aspect of the Void by using the command `/giveaspectofthevoid`.
+   - Anyone can give themselves the Aspect of the Void by using the command `/giveaspectofthevoid`.
 2. **Using the Aspect of the Void:**
    - **Instant Transmission:** Right-click to teleport 12 blocks ahead. You will gain a speed boost for 3 seconds.
    - **Ether Transmission:** Crouch and right-click to teleport to the targeted block within 61 blocks.
 
 ## Permissions
-- Only OP players or admins can use the `/giveaspectofthevoid` command to obtain the Aspect of the Void.
-- Once given, all players can use the Aspect of the Void's abilities without any additional permissions.
+- There are no permissions. All players can get and use the Aspect of the Void.
 
 ## License
 - This plugin is licensed under the [GNU General Public License v3.0](LICENSE).
