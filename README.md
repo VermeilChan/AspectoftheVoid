@@ -20,10 +20,6 @@ Aspect of the Void is a Spigot plugin inspired by the [Aspect of the Void](https
    - **Instant Transmission:** Right-click to teleport 12 blocks ahead. You will gain a speed boost for 3 seconds.
    - **Ether Transmission:** Crouch and right-click to teleport to the targeted block within 61 blocks.
 
-## Compatibility
-- Supports Spigot 1.17 to 1.20.4 (some features may not work).
-- Fully compatible with Spigot 1.20.5+
-
 ## Permissions
 - There are no permissions. All players can get and use the Aspect of the Void.
 
