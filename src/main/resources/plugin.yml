@@ -1,7 +1,7 @@
 name: AspectoftheVoid
 version: '${project.version}'
 main: me.vermeil.aspectofthevoid.AspectoftheVoid
-api-version: '1.17'
+api-version: '1.20'
 load: STARTUP
 authors: [VermeilChan]
 description: Aspect of the Void is a Spigot plugin inspired by the Aspect of the Void from the Hypixel Skyblock.
