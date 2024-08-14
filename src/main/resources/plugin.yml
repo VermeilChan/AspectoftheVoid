@@ -9,6 +9,8 @@ website: https://github.com/VermeilChan/AspectoftheVoid
 commands:
   giveaspectofthevoid:
     usage: /giveaspectofthevoid
+    description: Gives the Aspect of the Void item to the player.
 permissions:
   giveaspectofthevoid.give:
     default: true
+    description: Allows players to use the /giveaspectofthevoid command.
