@@ -22,10 +22,6 @@ public class AotvCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (!player.isOp()) {
-            return true;
-        }
-
         ItemStack Aspectofthevoid = AotvBuilder.giveAotv();
         player.getInventory().addItem(Aspectofthevoid);
         player.sendMessage(ColorUtils.color("&aYou have received the Aspect Of The Void."));
