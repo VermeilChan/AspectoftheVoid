@@ -9,7 +9,7 @@ Aspect of the Void is a Spigot plugin inspired by the [Aspect of the Void](https
 
 ## Usage
 ### Installation
-1. Download the latest stable release from [here](https://github.com/VermeilChan/AspectoftheVoid/releases/latest). Compatible with Minecraft version 1.17+.
+1. Download the latest stable release from [here](https://github.com/VermeilChan/AspectoftheVoid/releases/latest).
 2. Place the JAR file in the `plugins` folder in your Minecraft server directory.
 3. Restart or reload your server to activate the plugin.
 
