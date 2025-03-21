@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -32,6 +33,16 @@ public class AotvEventListener implements Listener {
                 teleportToTargetedBlock(player);
             } else {
                 teleportPlayer(player);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Player) {
+            Player player = (Player) event.getEntity();
+            if (event.getCause() == EntityDamageEvent.DamageCause.FALL && isValidItem(player.getInventory().getItemInMainHand())) {
+                event.setCancelled(true);
             }
         }
     }
